@@ -5,8 +5,11 @@ class Show < ActiveRecord::Base
   end
 
   def self.most_popular_show
-    Show.maximum(:rating).order(:name)
-
+    sql = >> SQL
+    SELECT name from shows ORDER_BY
+    rating DESC LIMIT 1
+    SQL 
+    
   end
 
 end
