@@ -5,7 +5,7 @@ class Show < ActiveRecord::Base
   end
 
   def self.most_popular_show
-    Song.find_by(:name).maxium(:rating)
+    Show.find_by(:name).maxium(:rating)
 
   end
 
